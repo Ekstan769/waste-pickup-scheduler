@@ -10,7 +10,7 @@ function FeedbackForm({ pickupId }) {
         setMessage('');
 
         try {
-            const response = await fetch(`http://localhost:3000/pickups/${pickupId}/feedback`, {
+            const response = await fetch(`https://waste-pickup-scheduler-api.onrender.com/pickups/${pickupId}/feedback`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ rating: Number(rating), comment }),

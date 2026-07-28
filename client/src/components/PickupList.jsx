@@ -8,7 +8,7 @@ function PickupList({ userId }) {
     useEffect(() => {
         async function fetchPickups() {
             try {
-                const response = await fetch(`http://localhost:3000/pickups/${userId}`);
+                const response = await fetch(`https://waste-pickup-scheduler-api.onrender.com/pickups/${userId}`);
                 const data = await response.json();
 
                 if (!response.ok) {
@@ -28,7 +28,7 @@ function PickupList({ userId }) {
     
     async function markCompleted(pickupId) {
             try {
-                const response = await fetch(`http://localhost:3000/pickups/${pickupId}`, {
+                const response = await fetch(`https://waste-pickup-scheduler-api.onrender.com/pickups/${pickupId}`, {
                     method: 'PATCH',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ status: 'completed' }),
