@@ -9,6 +9,7 @@ A full-stack MVP that lets residents schedule waste pickups, track their status 
 > Note: The backend is hosted on Render's free tier, which spins down after inactivity. The first request after idle time may take 20-30 seconds to respond while the server wakes up.
 
 ## Features
+- Create a new account and login 
 - Schedule a pickup (address + date)
 - View all your scheduled pickups
 - Mark a pickup as completed
