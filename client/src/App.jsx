@@ -3,6 +3,7 @@ import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import PickupForm  from "./components/PickupForm";
 import PickupList from "./components/PickupList";
+import binIcon from './assets/bin-icon.png';
 import './App.css';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
     return(
       <div className="app">
         <header className="app-header">
-          <h1>BinTime</h1>
+          <h1><img src={binIcon} alt="BinTime logo" style={{ height: '32px', verticalAlign: 'middle', marginRight: '8px' }} />BinTime</h1>
           <p>Schedule and track your waste pickups</p>
         </header>
 
@@ -45,7 +46,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>BinTime</h1>
+        <h1><img src={binIcon} alt="BinTime logo" style={{ height: '32px', verticalAlign: 'middle', marginRight: '8px' }} />BinTime</h1>
         <p>Schedule and track your waste pickups</p>
         <p className="signed-in-as">
           Signed in as: {user.name}
