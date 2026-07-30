@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-function PickupForm() {
-    const [userId, setUserId] = useState('');
+function PickupForm({ userId }) {
     const [address, setAddress] = useState('');
     const [scheduledDate, setScheduledDate] = useState('');
     const [message, setMessage] = useState('');
@@ -15,7 +14,7 @@ function PickupForm() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    user_id: Number(userId),
+                    user_id: userId,
                     address,
                     scheduled_date: scheduledDate,
                 }),
@@ -29,7 +28,6 @@ function PickupForm() {
             }
 
             setMessage('Pickup scheduled succesfully!');
-            setUserId('');
             setAddress('');
             setScheduledDate('');
         } catch (error) {
@@ -43,18 +41,9 @@ function PickupForm() {
             <h2>Schedule a Pickup</h2>
             
             <label>
-                User ID:
-                <input
-                 type="number"
-                 value={userId}
-                 onChange={(e) => setUserId(e.target.value)}
-                 required
-                />
-            </label>
-
-            <label>
                 Address:
                 <input
+                 id="address"
                  type="text"
                  value={address}
                  onChange={(e) => setAddress(e.target.value)}
@@ -65,6 +54,7 @@ function PickupForm() {
             <label>
                 Scheduled Date:
                 <input
+                 id="scheduledDate"
                  type="date"
                  value={scheduledDate}
                  onChange={(e) => setScheduledDate(e.target.value)}
